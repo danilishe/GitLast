@@ -37,6 +37,7 @@ public class GitLost {
             // в качестве максимального значения случайного числа (не включительно)
             final int randomIndex = new Random().nextInt(names.size());
             System.out.println("Мы удалили \"" + names.get(randomIndex) + "\". Теперь добавь своё имя в любой строке " + FILE_NAME);
+            names.remove(randomIndex);
             Files.write(Paths.get(FILE_NAME), names);
         }
         // а здесь выводим победителя(лей) при помощи статического метода getWinnersList
